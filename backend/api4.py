@@ -136,7 +136,12 @@ app.add_middleware(
         "http://127.0.0.1:5174",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        # Allow Vercel Deployments
+        "https://media-mind-ai.vercel.app",
+        "https://mediamind-ai.vercel.app"
     ],
+    # Since Vercel auto-generates preview URLs, a more robust option is regex:
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH"],
     allow_headers=["*"],

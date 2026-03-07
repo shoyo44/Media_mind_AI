@@ -14,7 +14,7 @@ import type {
 } from '../types';
 
 // Match the working index4.html API base URL
-const API_BASE_URL = 'http://127.0.0.1:8000/api/mediamind/v1';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api/mediamind/v1';
 
 // Cache token like index4.html does
 let cachedToken: string | null = null;
@@ -29,16 +29,16 @@ export function clearTokenCache() {
 // Get the current user's ID token (matching index4.html approach)
 async function getAuthToken(): Promise<string> {
   const user = auth.currentUser;
-  
+
   if (!user) {
     throw new Error('No authenticated user. Please sign in again.');
   }
-  
+
   // If we have a cached token for this user, use it (like index4.html)
   if (cachedToken && tokenUser === user) {
     return cachedToken;
   }
-  
+
   try {
     // Get token WITHOUT force refresh (matching index4.html: await user.getIdToken())
     const token = await user.getIdToken();
@@ -62,7 +62,7 @@ async function apiCall<T>(
 ): Promise<T> {
   try {
     const token = await getAuthToken();
-    
+
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       method,
       headers: {

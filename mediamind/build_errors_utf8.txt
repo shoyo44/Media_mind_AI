@@ -1,0 +1,7 @@
+﻿
+> mediamind@0.0.0 build
+> tsc -b && vite build
+
+components/ErrorBoundary.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+components/ErrorBoundary.tsx(1,28): error TS1484: 'ErrorInfo' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+components/ErrorBoundary.tsx(1,39): error TS1484: 'ReactNode' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.

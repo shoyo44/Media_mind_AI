@@ -235,7 +235,7 @@ export const GenerateContent: React.FC<GenerateContentProps> = ({
       <div className="grid lg:grid-cols-3 gap-4 items-start">
         {/* Left Panel: Role Selection */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col" style={{ height: '500px' }}>
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col h-[350px] lg:h-[500px]">
             {/* Header */}
             <div className="bg-gradient-to-r from-purple-600 to-purple-700 px-4 py-3 flex-shrink-0">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">

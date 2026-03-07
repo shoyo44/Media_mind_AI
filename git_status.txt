@@ -1,0 +1,61 @@
+﻿On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .env
+	deleted:    DEV_SETUP.md
+	deleted:    HOW_TO_RUN.md
+	deleted:    RESTART_FRONTEND.md
+	modified:   __pycache__/api4.cpython-313.pyc
+	deleted:    ai.py
+	modified:   api4.py
+	deleted:    cp.html
+	deleted:    flux.py
+	deleted:    index4.html
+	modified:   mcp_server.py
+	modified:   mediamind.json
+	modified:   mediamind/.gitignore
+	modified:   mediamind/App.tsx
+	modified:   mediamind/components/GenerateContent.tsx
+	modified:   mediamind/components/Header.tsx
+	modified:   mediamind/components/Login.tsx
+	modified:   mediamind/components/Profile.tsx
+	modified:   mediamind/components/TabNavigation.tsx
+	modified:   mediamind/config/firebase.ts
+	modified:   mediamind/hooks/useAuth.ts
+	modified:   mediamind/index.css
+	modified:   mediamind/index.html
+	deleted:    mediamind/src/App.tsx
+	deleted:    mediamind/src/assets/react.svg
+	deleted:    mediamind/src/index.css
+	deleted:    mediamind/src/main.tsx
+	modified:   mediamind/types/index.ts
+	modified:   mediamind/utils/markdown.ts
+	deleted:    package.json
+	deleted:    prompt_enhancer.py
+	modified:   requirements.txt
+	deleted:    start-dev.bat
+	deleted:    start-dev.ps1
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	MediaMind_Explanation_Script.md
+	PROMPT_ENHANCEMENT_FIX.md
+	README.md
+	git_status.txt
+	mediamind/components/About.tsx
+	mediamind/components/Footer.tsx
+	mediamind/components/LandingPage.tsx
+	mediamind/components/Logo.tsx
+	mediamind/components/ProfileImage.tsx
+	mediamind/components/Settings.tsx
+	mediamind/package-lock.json
+	mediamind/package.json
+	mediamind/public/logo.svg
+	mediamind/tsconfig.app.json
+	mediamind/tsconfig.json
+	mediamind/tsconfig.node.json
+	prompt_enhancement.json
+
+no changes added to commit (use "git add" and/or "git commit -a")

@@ -1,0 +1,81 @@
+{
+    "use_cases": {
+        "Intelligent Blog Creator": {
+            "type": "detailed",
+            "temperature": 0.4,
+            "max_tokens": 60,
+            "instruction": "Extract the core subject of the blog post. Enhance it into a detailed, photorealistic image generation prompt. Add descriptors for lighting, composition, and mood appropriate for a professional blog header image. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Professional conceptual illustration, high quality, 8k resolution, clean aesthetic, no text"
+        },
+        "LinkedIn Post Architect": {
+            "type": "creative_professional",
+            "temperature": 0.6,
+            "max_tokens": 50,
+            "instruction": "Extract the main theme of the LinkedIn post. Enhance it into a striking, professional image generation prompt that would capture attention in a social media feed. Focus on modern corporate aesthetics, engaging visual metaphors, and high-quality photography styles. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Modern professional workplace aesthetic, engaging corporate photography, high contrast lighting, no text"
+        },
+        "Email Writing Specialist": {
+            "type": "contextual",
+            "temperature": 0.3,
+            "max_tokens": 40,
+            "instruction": "Identify the context of the email context. Create a clean, professional, and slightly abstract image generation prompt suitable for corporate communication. Emphasize minimalistic design, subtle colors, and professional environment elements. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Minimalist corporate aesthetic, abstract professional background, clean lines, no text"
+        },
+        "Marketing Content Strategist": {
+            "type": "commercial",
+            "temperature": 0.7,
+            "max_tokens": 50,
+            "instruction": "Identify the product or service being marketed. Enhance it into a vibrant, high-converting commercial image generation prompt. Use energetic descriptors, dynamic lighting, and commercial photography styles designed to evoke desire. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "High-end commercial product photography, dramatic lighting, vibrant colors, premium aesthetic, no text"
+        },
+        "Non-Technical Bridge": {
+            "type": "creative_analogy",
+            "temperature": 0.5,
+            "max_tokens": 60,
+            "instruction": "Read the provided text and identify BOTH the technical concept and the core everyday visual analogy used. Create a vibrant, highly creative image generation prompt that FUSES these two worlds together (e.g., a bakery where measuring cups are filled with glowing data points, or a flowing river made of binary code). The image must clearly show the technical aspects seamlessly blended into the everyday analogy. IMPORTANT: DO NOT INCLUDE ANY TEXT, LETTERS, OR WORDS IN THE IMAGE. Keep it under 50 words.",
+            "fallback_subject": "A seamless fusion of a technical concept and an everyday analogy, vibrant colors, engaging artistic style, surreal but clear concept, no text"
+        },
+        "Poster Phrase Generator": {
+            "type": "minimalist_artistic",
+            "temperature": 0.1,
+            "max_tokens": 50,
+            "instruction": "Return exactly this string, replacing [SUBJECT] with the main topic: 'A minimalist, abstract background pattern inspired by [SUBJECT], clean geometric shapes, ample negative space, poster style, no text'. DO NOT elaborate or invent complex scenes.",
+            "fallback_subject": "Minimalist poster background design, bold geometric shapes, strong negative space, artistic composition, no text"
+        },
+        "Cognitive Precision Summarizer": {
+            "type": "abstract",
+            "temperature": 0.4,
+            "max_tokens": 40,
+            "instruction": "Extract the core theme of the summary. Create an abstract, cognitive-focused image generation prompt. Use elements like glowing lines, connected nodes, clean data visualization aesthetics, or futuristic digital art to represent pure information density. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Abstract data visualization, glowing connected nodes, futuristic digital art, dense information network, no text"
+        },
+        "Temporal & Logistics Architect": {
+            "type": "architectural",
+            "temperature": 0.2,
+            "max_tokens": 40,
+            "instruction": "Identify the primary location or activity in the itinerary. Create a structured, highly organized image generation prompt. Focus on architectural photography, clean modern spaces, or dynamic urban movement with precise timing and lighting (e.g., golden hour or blue hour). Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Modern architectural photography, clean organized space, dynamic lighting, urban environment, no text"
+        },
+        "Media & Newspaper Journalist": {
+            "type": "photojournalistic",
+            "temperature": 0.2,
+            "max_tokens": 50,
+            "instruction": "Extract the factual subject of the news report. Create a realistic, documentary-style image generation prompt. Focus on authentic photojournalism styles, realistic lighting, and capturing a truthful moment without artificial enhancement. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Realistic documentary photography, authentic moment, natural lighting, photojournalism style, no text"
+        },
+        "Dialogue & Scenario Designer": {
+            "type": "cinematic",
+            "temperature": 0.5,
+            "max_tokens": 50,
+            "instruction": "Identify the setting and emotional tension between the personas. Create a cinematic image generation prompt that captures this mood. Focus on dramatic lighting, specific camera angles (e.g., over-the-shoulder, wide shot), and expressive atmospheric details. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Cinematic shot of two people in a dramatic setting, expressive lighting, movie still, high tension mood, no text"
+        },
+        "default": {
+            "type": "general",
+            "temperature": 0.3,
+            "max_tokens": 40,
+            "instruction": "Extract visual subject, add quality details like lighting and composition. Make it look professional. Do NOT include any text, words, or letters in the image prompt.",
+            "fallback_subject": "Professional visualization, clean aesthetic, dramatic lighting, high detail, 8k quality, cinematic composition, no text or labels"
+        }
+    }
+}

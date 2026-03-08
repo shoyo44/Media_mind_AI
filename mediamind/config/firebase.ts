@@ -3,13 +3,13 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 // Your MediaMind AI Firebase Configuration
 const firebaseConfig = {
-  apiKey: "REDACTED_API_KEY",
-  authDomain: "mediamind-ai-11a91.firebaseapp.com",
-  projectId: "mediamind-ai-11a91",
-  storageBucket: "mediamind-ai-11a91.firebasestorage.app",
-  messagingSenderId: "241923240065",
-  appId: "1:241923240065:web:3a2677f2398b46d4db1d80",
-  measurementId: "G-BM1LYKGS4G"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "mediamind-ai-11a91.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "mediamind-ai-11a91",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "mediamind-ai-11a91.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "241923240065",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:241923240065:web:3a2677f2398b46d4db1d80",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-BM1LYKGS4G"
 };
 
 // Initialize Firebase

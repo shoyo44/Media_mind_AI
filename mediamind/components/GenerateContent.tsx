@@ -103,12 +103,24 @@ export const GenerateContent: React.FC<GenerateContentProps> = ({
     try {
       console.log('🔄 Loading roles...');
       const rolesData = await api.getRoles();
-      console.log('✅ Roles loaded:', rolesData);
+      console.log('✅ Roles loaded:', rolesData.length, 'items');
+      
+      // Update state
       setRoles(rolesData);
+      
+      // If we got roles from cache, they will be set immediately.
+      // The background fetch in api.getRoles doesn't trigger a re-render here 
+      // unless we specifically handle it, but for roles (which change rarely),
+      // showing the cached ones immediately is usually sufficient for one session.
     } catch (error) {
       console.error('❌ Failed to load roles:', error);
-      // Show error to user
-      setResult('❌ Error: Failed to load roles. Please refresh the page.');
+      // Only show error if we have NO roles at all
+      setRoles(prev => {
+        if (prev.length === 0) {
+          setResult('❌ Error: Failed to load roles. Please refresh the page.');
+        }
+        return prev;
+      });
     }
   };
 

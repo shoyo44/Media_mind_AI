@@ -47,18 +47,18 @@ try:
         # For Atlas, use a clean connection string without tlsAllowInvalidCertificates
         clean_url = MONGODB_URL.replace("&tlsAllowInvalidCertificates=true", "").replace("tlsAllowInvalidCertificates=true&", "").replace("?tlsAllowInvalidCertificates=true", "")
         
-        # MongoDB Atlas connection with Windows-compatible SSL settings
+    # MongoDB Atlas connection with Windows-compatible SSL settings
         mongo_client = AsyncIOMotorClient(
             clean_url,
-            serverSelectionTimeoutMS=5000,  # Reduced to 5s for faster startup check
-            connectTimeoutMS=5000,
+            serverSelectionTimeoutMS=2000,  # Reduced to 2s for faster startup check
+            connectTimeoutMS=2000,
             socketTimeoutMS=5000,
             retryWrites=True,
             w='majority',
             tls=True,
-            tlsCAFile=certifi.where(),
-            tlsAllowInvalidCertificates=True,  # For development only
-            tlsAllowInvalidHostnames=True,    # For development only
+            tlsCAFile=certifi.where() if 'certifi' in globals() else None,
+            tlsAllowInvalidCertificates=True,
+            tlsAllowInvalidHostnames=True,
         )
     else:
         # Local MongoDB connection
@@ -334,6 +334,7 @@ Return enhanced prompt only."""
 
 def fallback_enhance_prompt(user_prompt: str, role_name: Optional[str] = None) -> str:
     """Fast local enhancement when API fails - Smart keyword extraction"""
+    # Lazy import re to speed up startup
     import re
     
     prompt_lower = user_prompt.lower()

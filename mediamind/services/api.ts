@@ -125,6 +125,11 @@ async function apiCallPublic<T>(
   }
 }
 
+// Role Caching Constants
+const ROLES_CACHE_KEY = 'mediamind_roles_cache';
+const ROLES_CACHE_TIMESTAMP_KEY = 'mediamind_roles_cache_timestamp';
+const ROLES_CACHE_TTL = 1000 * 60 * 60 * 24; // 24 hours
+
 // API Service Functions
 export const api = {
   // Content Generation
@@ -163,9 +168,47 @@ export const api = {
   getStats: () =>
     apiCall<UserStats>('/stats'),
 
-  // Roles (public endpoint, no auth required)
-  getRoles: () =>
-    apiCallPublic<Role[]>('/roles'),
+  // Roles (public endpoint, with caching)
+  getRoles: async (): Promise<Role[]> => {
+    // 1. Try to load from cache first
+    try {
+      const cachedData = localStorage.getItem(ROLES_CACHE_KEY);
+      const cachedTimestamp = localStorage.getItem(ROLES_CACHE_TIMESTAMP_KEY);
+      
+      if (cachedData && cachedTimestamp) {
+        const timestamp = parseInt(cachedTimestamp, 10);
+        const roles = JSON.parse(cachedData) as Role[];
+        
+        // If cache is fresh, still return it but revalidate in background
+        const isFresh = (Date.now() - timestamp) < ROLES_CACHE_TTL;
+        console.log(`📦 Serving roles from cache (${isFresh ? 'fresh' : 'stale'})`);
+        
+        // Background revalidation
+        apiCallPublic<Role[]>('/roles').then(freshRoles => {
+          localStorage.setItem(ROLES_CACHE_KEY, JSON.stringify(freshRoles));
+          localStorage.setItem(ROLES_CACHE_TIMESTAMP_KEY, Date.now().toString());
+          console.log('🔄 Roles cache updated in background');
+        }).catch(err => console.warn('⚠️ Background roles update failed:', err));
+
+        return roles;
+      }
+    } catch (e) {
+      console.warn('⚠️ Failed to load roles from cache:', e);
+    }
+
+    // 2. Fallback to direct call if cache is empty
+    const freshRoles = await apiCallPublic<Role[]>('/roles');
+    
+    // Save to cache
+    try {
+      localStorage.setItem(ROLES_CACHE_KEY, JSON.stringify(freshRoles));
+      localStorage.setItem(ROLES_CACHE_TIMESTAMP_KEY, Date.now().toString());
+    } catch (e) {
+      console.warn('⚠️ Failed to save roles to cache:', e);
+    }
+    
+    return freshRoles;
+  },
 };
 
 export default api;

@@ -15,7 +15,7 @@ Content creation today faces critical challenges: fragmented tools requiring con
 ## ✨ Key Features
 
 ### 🎭 Role-Based Content Generation
-- **15+ Specialized Roles**: Blog Writer, Educator, Technical Writer, Marketing Expert, Creative Storyteller, and more
+- **10+ Specialized Roles**: Blog Writer, Educator, Technical Writer, Marketing Expert, Creative Storyteller, and more
 - **Context-Aware Outputs**: Domain-specific terminology and formatting
 - **Intelligent System Prompts**: Pre-configured for optimal results
 
@@ -335,13 +335,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Meta for Llama models
 
 ---
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-- Open an issue on GitHub
-- Email: your.email@example.com
-- Documentation: [docs/](docs/)
 
 ---
 

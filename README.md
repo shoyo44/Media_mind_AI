@@ -320,9 +320,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 👥 Authors
+## Author
 
-- **Your Name** - Initial work - [GitHub](https://github.com/yourusername)
+- **Dhanush S** - Initial work - [GitHub](https://github.com/shoyo44)
 
 ---
 
@@ -338,4 +338,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by MediaMind AI Team**
+**Made by Dhanush S**
